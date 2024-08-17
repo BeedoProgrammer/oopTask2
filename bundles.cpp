@@ -1,4 +1,4 @@
-class Bundle{
+class Bundle_Interface{
     protected:
       float discount;
 
@@ -6,26 +6,24 @@ class Bundle{
       virtual float calculate_discount(float discount, float price) = 0;
 };
 
-class Bundle_0 : public Bundle{
+class Bundle_0 : public Bundle_Interface{
     public:
-      Bundle_0(){
-        discount = 1;
-      }
-
-    float calculate_discount(float discount, float price){
-        float discounted_price = price * discount;
-        return discounted_price;
+      float calculate_discount(float discount, float price){
+        return price;
     }
 };
 
-class Bundle_1 : public Bundle{
+class Bundle_1 : public Bundle_Interface{
+    private:
+      float discounted_price;
+
     public:
       Bundle_1(){
         discount = 0.15;
       }
 
     float calculate_discount(float discount, float price){
-        float discounted_price = price - (price * discount);
+        discounted_price = price - (price * discount);
         return discounted_price;
     }
 };
