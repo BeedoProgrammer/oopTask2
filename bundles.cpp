@@ -17,3 +17,15 @@ class Bundle_0 : public Bundle{
         return discounted_price;
     }
 };
+
+class Bundle_1 : public Bundle{
+    public:
+      Bundle_1(){
+        discount = 0.15;
+      }
+
+    float calculate_discount(float discount, float price){
+        float discounted_price = price - (price * discount);
+        return discounted_price;
+    }
+};
