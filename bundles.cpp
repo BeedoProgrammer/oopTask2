@@ -14,16 +14,27 @@ class Bundle_0 : public Bundle_Interface{
 };
 
 class Bundle_1 : public Bundle_Interface{
-    private:
-      float discounted_price;
-
     public:
       Bundle_1(){
         discount = 0.15;
       }
 
     float calculate_discount(float discount, float price){
-        discounted_price = price - (price * discount);
-        return discounted_price;
+        return price - (price * discount);
+    }
+};
+
+class Bundle_2 : public Bundle_Interface{
+    public:
+      Bundle_2(){
+        discount = 100;
+      }
+
+    float calculate_discount(float discount, float price){
+        if(price > 200){
+          return price - discount;
+        }
+        else
+          return price;
     }
 };
