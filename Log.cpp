@@ -28,7 +28,7 @@ string getCurrentTimeString(){
 void Log(string info)
 {
     string time = getCurrentTimeString();
-    outputFile.open("bedo.txt");
+    outputFile.open("History.txt", ios::app);
     if(outputFile.is_open()){
         outputFile << "INFO:" << time << info << endl;
         outputFile.close();
@@ -36,11 +36,4 @@ void Log(string info)
     else{
         cout << "File Error" << endl;
     }
-}
-
-int main()
-{
-    Log("Anwar");
-    
-    return 0;
 }
