@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <unordered_map>
 using namespace std;
 
 int verifyId(int id){
@@ -17,6 +17,17 @@ else{
     //Take op num from Hash map then ask user to mkae opreation 
 }
 }
+void store(/*customer c*/){
+    float price;
+    cout<<"Please add price."<<endl;
+    cin >> price;
+    //cont
+}
+void insertmap(unordered_map<long, int>& map, long ID, int numofOP) // Pass by reference
+{
+    map[ID] = numofOP;
+}
+
 void newCustomer(){
     int id;
     cout<<"Enter Customer ID: ";
@@ -25,7 +36,13 @@ void newCustomer(){
         cout<<"ID already exist."<<endl;
     }
     else{
-        //Add ID to Hash map
+      //  customers ch(id);
+        
+    unordered_map<long, int> map;
+    insertmap(map, id, 0/* ch.opnumer*/);
+    for (auto x : map) 
+        cout << x.first << " " << x.second << endl;
+
         cout<<"ID added."<<endl;
     }
 }
