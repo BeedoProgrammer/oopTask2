@@ -1,1 +1,1 @@
- "Hello to topredo Sto
+ Log("Enterfunction  \"Modify Customer\"");
